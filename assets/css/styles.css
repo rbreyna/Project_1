@@ -39,9 +39,13 @@ h1 {
     margin-top: 2%;
 }
 
+.search-bar-div {
+    text-align: center;
+}
+
 .form-control {
-    margin: 1%;
-    width: 50%;
+    margin: 1% auto;
+    width:80% 
 }
 
 .btn-search {
@@ -50,4 +54,10 @@ h1 {
     background-color: lightsalmon;
     color: black;
     font-family: 'Anonymous Pro', monospace;
+}
+
+.btn:hover {
+    background-color: darkolivegreen;
+    border-color: darkolivegreen;
+    color: white;
 }
