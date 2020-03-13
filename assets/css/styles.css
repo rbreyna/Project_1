@@ -1,0 +1,53 @@
+/* FONTS 
+font-family: 'Gochi Hand', cursive;
+font-family: 'Anonymous Pro', monospace;
+font-family: 'Montserrat', sans-serif; */
+
+
+h1 {
+    font-family: 'Gochi Hand', cursive;
+    font-size: 10rem;
+}
+
+.jumbotron-fluid {
+    background-image: url("../images/banner3.png");
+    background-size: cover;
+    text-align: center;
+}
+
+
+.search-bar {
+    padding: 0 7% 7%;
+}
+
+
+#data-font {
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 2rem;
+}
+
+#tagline {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+}
+
+#daytrip-logo {
+    width: 70%;
+}
+
+.search-bar {
+    margin-top: 2%;
+}
+
+.form-control {
+    margin: 1%;
+    width: 50%;
+}
+
+.btn-search {
+    margin-top: 2%;
+    border-color: lightsalmon;
+    background-color: lightsalmon;
+    color: black;
+    font-family: 'Anonymous Pro', monospace;
+}
