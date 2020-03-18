@@ -26,7 +26,7 @@
 
 
 
-    <div class="container-fluid header">
+    <div class="container-fluid header" id="header-id">
         <div class="header-text">
             <img src="assets/images/daytrip-logo-colorized.png" id="daytrip-logo" alt="">
             <div class="search-bar-div">
@@ -42,16 +42,19 @@
         </div>
     </div>
 
-
-
-
-    <div class="container" id="yelp-data-output">
-        <!-- Highlights will appear here -->
+    <div class="container" id="weather-data-output">
+        <!-- Weather will appear here -->
     </div>
 
 
-    <div class="container" id="weather-data-output">
-        <!-- Weather will appear here -->
+    <div class="container" id="yelp-data-output">
+        <div class="container button-div" id="button-div-placement"></div>
+        <!-- Highlights will appear here -->
+        <div class="row" id="row-1">
+        </div>
+        <!-- <div class="row" id="row-2">
+            
+        </div> -->
     </div>
 
     <!-- jQuery -->
@@ -63,7 +66,11 @@
     <script src="assets/javascript/secret.js"></script>
 
     <!-- Custom JS -->
+    <!-- Yelp API -->
     <script src="assets/javascript/app.js"></script>
+
+    <!-- Open Weather Map API -->
+    <!-- <script src="assets/javascript/app2.js"></script> -->
 
 
 </body>
