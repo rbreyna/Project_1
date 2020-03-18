@@ -22,17 +22,16 @@ function getYelp(search, location) {
             var sortedBusinesses = data.businesses.sort(compare);
             console.log(sortedBusinesses);
 
-
             for (i = 0; i < 10; i++) {
 
                 var address = "";
 
-                for(j = 0; j < sortedBusinesses[i].location.display_address.length;j++){
+                for (j = 0; j < sortedBusinesses[i].location.display_address.length; j++) {
 
                     address = address + ", " + sortedBusinesses[i].location.display_address[j];
                 }
 
-                address = address.substring(1);                
+                address = address.substring(1);
 
                 var yelpLink = sortedBusinesses[i].url;
 
@@ -54,15 +53,15 @@ function getYelp(search, location) {
                 </div>
                 
                 `)
-          var expensiveRestaurants = sortedBusinesses.filter( function(a){
-                            return a.price === "$";
-                        })
-                        console.log(expensiveRestaurants);
+                var expensiveRestaurants = sortedBusinesses.filter(function (a) {
+                    return a.price === "$";
+                })
+                console.log(expensiveRestaurants);
 
+            }
         }
     });
+
+
+
 }
-
-
-
-  
