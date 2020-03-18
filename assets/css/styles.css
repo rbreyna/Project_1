@@ -73,3 +73,28 @@ h1 {
     border-color: darkolivegreen;
     color: white;
 }
+
+.col-md-5 {
+    padding: 0;
+    margin: 0;
+}
+
+.card {
+    margin: 2%;
+
+}
+
+.card-align {
+    text-align: center;
+}
+
+.row-1 {
+    text-align: center;
+} 
+
+.results-img {  
+    margin-left: 40px;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+}
