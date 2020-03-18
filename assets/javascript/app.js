@@ -1,6 +1,5 @@
 
-
-getYelp("restaurants", "San Antonio, TX")
+getYelp("coffee", "San Antonio, TX")
 
 function getYelp(search, location) {
 
@@ -21,14 +20,46 @@ function getYelp(search, location) {
                 }
             }
 
-            var sortedBusinesses = data.businesses.sort( compare );
+            var sortedBusinesses = data.businesses.sort(compare);
             console.log(sortedBusinesses);
-  
-            var expensiveRestaurants = sortedBusinesses.filter( function(a){
-                return a.price === "$";
-            })
-            console.log(expensiveRestaurants);
-            console.log(data);
+
+
+            for (i = 0; i < 10; i++) {
+
+                var address = "";
+
+                for(j = 0; j < sortedBusinesses[i].location.display_address.length;j++){
+
+                    address = address + ", " + sortedBusinesses[i].location.display_address[j];
+                }
+
+                address = address.substring(1);                
+
+                var yelpLink = sortedBusinesses[i].url;
+
+                $("#yelp-data-output").append(`
+                
+                <div class="card" style="width: 18rem;">
+                     <img src="${sortedBusinesses[i].image_url}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class='card-title' id='business-name'>${sortedBusinesses[i].name}</h5>
+                             <p class='card-text'>Rating: ${sortedBusinesses[i].rating}</p>
+                        </div>
+                        <ul class='list-group list-group-flush' id='business-info'>
+                             <li class='list-group-item' id='address'>${address}</li>
+                             <li class='list-group-item' id='phone'>${sortedBusinesses[i].display_phone}</li>
+                         </ul>
+                         <div class='card-body' id='yelp-link'>
+                             <a href="${yelpLink}" class="card-link">Yelp! Site</a>
+                        </div>
+                </div>
+                
+                `)
+          var expensiveRestaurants = sortedBusinesses.filter( function(a){
+                            return a.price === "$";
+                        })
+                        console.log(expensiveRestaurants);
+
         }
     });
 }
