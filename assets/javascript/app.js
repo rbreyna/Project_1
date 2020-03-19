@@ -100,9 +100,12 @@ function getYelp(search, location) {
 
 $(document).on("click", "#search-again", function () {
 
+    // Show header again
     $("#header-id").show();
 
-    $("#yelp-data-output").empty();
+    // Empty results contents
+    $("#button-div-placement").empty();
+    $("#row-1").empty();
 
     // *** NOTE: Remember to empty weather div in app2.js
 
