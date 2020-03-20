@@ -5,11 +5,16 @@ $("#search-awesome").on("click", function (event) {
     // Added to prevent page load on type="submit" click event
     event.preventDefault();
 
+    $("body").attr("id", "dynamic-background-mega");
+
     // Capture user inputs: 
     var search = $("#user-search").val();
     console.log(search);
 
-    var location = $("#user-location").val();
+    var userCity = $("#user-city").val();
+    var userState = $("#user-state").val();
+
+    var location = userCity + ", " + userState;
     console.log(location);
 
     // In here, we'll clear the header div
@@ -69,10 +74,10 @@ function getYelp(search, location) {
 
                 $("#row-1").append(`
                 
-                <div class="card card-align" style="width: 18rem;">
+                <div class="card card-align" style="width: 20rem;">
                      <img src="${sortedBusinesses[i].image_url}" class="card-img-top results-img" alt="">
                         <div class="card-body">
-                            <h5 class='card-title' id='business-name'>${sortedBusinesses[i].name}</h5>
+                            <h4 class='card-title' id='business-name'>${sortedBusinesses[i].name}</h4>
                              <p class='card-text'>Rating: ${sortedBusinesses[i].rating}</p>
                         </div>
                         <ul class='list-group list-group-flush' id='business-info'>
@@ -107,6 +112,11 @@ $(document).on("click", "#search-again", function () {
     $("#button-div-placement").empty();
     $("#row-1").empty();
 
+    // Remove mega-div id
+    $("body").removeAttr("id", "dynamic-background-mega")
+
     // *** NOTE: Remember to empty weather div in app2.js
+    $("#weather-data-output").empty();
+    
 
 });
