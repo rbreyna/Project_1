@@ -1,4 +1,6 @@
-var input = document.querySelector('#user-location');
+
+
+// var input = userCity + "," + userState;
 
 var main = document.querySelector('#city');
 
@@ -6,14 +8,22 @@ var temp = document.querySelector('.temp');
 
 var weather = document.querySelector('.weather');
 
-var button = document.querySelector('#search-awesome');
+// var button = document.querySelector('#search-awesome');
 
-button.addEventListener('click', function (city) {
+$(document).on('click', "#search-awesome", function (event) {
 
-  var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + input.value + '&appid=8a5688a03902b0d6df72f5395e0d9447' + '&units=imperial'
-  console.log(queryURL);
+  // We had to add these variables here to capture the value in the .on("click") event
+  var userCity = $('#user-city').val().trim();
+  var userState = $('#user-state').val().trim();
 
-  fetch('https://api.openweathermap.org/data/2.5/weather?q=' + input.value + '&appid=8a5688a03902b0d6df72f5395e0d9447' + '&units=imperial')
+  event.preventDefault();
+
+  var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + userCity + ',' + userState + '&appid=8a5688a03902b0d6df72f5395e0d9447' + '&units=imperial'
+  // console.log(queryURL);
+  console.log(userCity);
+  console.log(userState)
+
+  fetch('https://api.openweathermap.org/data/2.5/weather?q=' + userCity + ',' + userState + '&appid=8a5688a03902b0d6df72f5395e0d9447' + '&units=imperial')
 
     .then(response => response.json())
 
@@ -27,15 +37,37 @@ button.addEventListener('click', function (city) {
 
       var weatherConditionIcon = data.weather[0].icon
 
-      console.log(weatherConditionIcon);
+      // Create a div dynamically for weather information
+      var weatherDiv = $("<div>").addClass("dynamic-weather-div");
 
-      main.innerHTML = cityValue;
 
-      weather.innerHTML = "Weather: " + weatherValue + " <img class='open-weather-map-img' src='http://openweathermap.org/img/wn/" + weatherConditionIcon + ".png'>" 
 
-      temp.innerHTML = "Temperature: " + tempValue + "F°";
+      // Create weather elements to sit inside new weatherDiv
 
-      input.value = "";
+      // CITY
+      var weatherCity = $("<h1>").addClass("id", "city");
+
+      // TEMP
+      var weatherTemp = $("<h3>").attr("id", "temp");
+
+      // WEATHER CONDITIONS
+      var weatherConditions = $("<h3>").attr("id", "weather-conditions");
+
+      // WEATHER CONDITIONS ICON
+      var weatherConditionsImg = $("<img>").attr("src", "http://openweathermap.org/img/wn/" + weatherConditionIcon + "@2x.png");
+      weatherConditionsImg.addClass("weather-icon");
+
+      // Dynamically fill elements with values
+      weatherCity.text(cityValue);
+      weatherTemp.text("The current temperature is " + tempValue + "°F");
+      weatherConditions.text("Local weather conditions: " + weatherValue);
+
+      // Append elements to div
+      weatherDiv.append(weatherCity, weatherTemp, weatherConditions, weatherConditionsImg);
+
+      // Append new div to existing weather div (#weather-data-output)
+      $("#weather-data-output").append(weatherDiv);
+
 
     })
 
