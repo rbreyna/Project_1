@@ -6,30 +6,37 @@ var temp = document.querySelector('.temp');
 
 var weather = document.querySelector('.weather');
 
-var button= document.querySelector('#search-awesome');
+var button = document.querySelector('#search-awesome');
 
-button.addEventListener('click', function(city){
+button.addEventListener('click', function (city) {
 
-fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=8a5688a03902b0d6df72f5395e0d9447'+'&units=imperial')
+  var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + input.value + '&appid=8a5688a03902b0d6df72f5395e0d9447' + '&units=imperial'
+  console.log(queryURL);
 
-.then(response => response.json())
+  fetch('https://api.openweathermap.org/data/2.5/weather?q=' + input.value + '&appid=8a5688a03902b0d6df72f5395e0d9447' + '&units=imperial')
 
-.then(data => {
+    .then(response => response.json())
 
-  var tempValue = data['main']['temp'];
+    .then(data => {
 
-  var cityValue = data['name'];
+      var tempValue = data['main']['temp'];
 
-  var weatherValue = data['weather'][0]['description'];
+      var cityValue = data['name'];
 
-  main.innerHTML = cityValue;
+      var weatherValue = data['weather'][0]['description'];
 
-  weather.innerHTML = "Weather: " + weatherValue;
+      var weatherConditionIcon = data.weather[0].icon
 
-  temp.innerHTML = "Temperature: " + tempValue + "F°";
+      console.log(weatherConditionIcon);
 
-  input.value ="";
+      main.innerHTML = cityValue;
 
-})
+      weather.innerHTML = "Weather: " + weatherValue + " <img class='open-weather-map-img' src='http://openweathermap.org/img/wn/" + weatherConditionIcon + ".png'>" 
+
+      temp.innerHTML = "Temperature: " + tempValue + "F°";
+
+      input.value = "";
+
+    })
 
 })
