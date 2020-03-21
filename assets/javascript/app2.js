@@ -102,7 +102,7 @@ $(document).on('click', "#search-awesome", function (event) {
       // Create weather elements to sit inside new weatherDiv
 
       // CITY
-      var weatherCity = $("<h1>").addClass("id", "city");
+      var weatherCity = $("<h1>").attr("id", "city");
 
       // TEMP
       var weatherTemp = $("<h3>").attr("id", "temp");

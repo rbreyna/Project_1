@@ -109,9 +109,9 @@ p, li, a {
 
 .results-img {  
     margin-top: 10px;
-    margin-left: 40px;
-    height: 215px;
-    width: 215px;
+    margin-left: 50px;
+    height: 225px;
+    width: 225px;
     border-radius: 100%;
 }
 
@@ -123,13 +123,13 @@ p, li, a {
     text-align: center;
 }
 
-.id {
-    background-color: bisque;
-    padding: 2%;
-    font-size: auto;
-}
-
 .weather-icon {
     background-color: lightcoral;
     border-radius: 100%;
+    margin-bottom: 2%;
+}
+
+#city {
+    padding-top: 2%;
+    font-size: 4rem;
 }
