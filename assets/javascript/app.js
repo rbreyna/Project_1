@@ -74,7 +74,7 @@ function getYelp(search, location) {
                      <img src="${sortedBusinesses[i].image_url}" class="card-img-top results-img" alt="">
                         <div class="card-body">
                             <h4 class='card-title' id='business-name'>${sortedBusinesses[i].name}</h4>
-                             <p class='card-text'>Rating: ${sortedBusinesses[i].rating}</p>
+                            <p class='card-text'>Rating: ${sortedBusinesses[i].rating}/5</p>
                         </div>
                         <ul class='list-group list-group-flush' id='business-info'>
                              <li class='list-group-item' id='address'>${address}</li>
