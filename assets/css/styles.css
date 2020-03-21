@@ -12,7 +12,7 @@ p, li, a {
     font-family: 'Montserrat', sans-serif;
 }
 
-.header {
+body {
     text-align: center;
     background: url("../images/banner3.png") no-repeat center center fixed; 
     -webkit-background-size: cover;
