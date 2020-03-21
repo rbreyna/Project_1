@@ -1,4 +1,3 @@
-// getYelp("coffee", "San Antonio")
 
 $("#search-awesome").on("click", function (event) {
 
@@ -9,13 +8,11 @@ $("#search-awesome").on("click", function (event) {
 
     // Capture user inputs: 
     var search = $("#user-search").val();
-    console.log(search);
 
     var userCity = $("#user-city").val();
     var userState = $("#user-state").val();
 
     var location = userCity + ", " + userState;
-    console.log(location);
 
     // In here, we'll clear the header div
     $("#header-id").hide();
@@ -57,7 +54,6 @@ function getYelp(search, location) {
             }
 
             var sortedBusinesses = data.businesses.sort(compare);
-            console.log(sortedBusinesses);
 
             for (i = 0; i < 10; i++) {
 
@@ -90,10 +86,6 @@ function getYelp(search, location) {
                 </div>
                 
                 `)
-                var expensiveRestaurants = sortedBusinesses.filter(function (a) {
-                    return a.price === "$";
-                })
-                console.log(expensiveRestaurants);
 
             }
         }
