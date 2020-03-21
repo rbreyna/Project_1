@@ -29,7 +29,12 @@ p, li, a {
 
 /* TESTING */
 #dynamic-background-mega {
-    background-color: lightblue;
+    text-align: center;
+    background: url("../images/results1.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
     /* Found viewport height and viewport width source code on GeeksforGeeks
     Source: https://www.geeksforgeeks.org/how-to-give-a-div-tag-100-height-of-the-browser-window-using-css/ */
@@ -107,9 +112,10 @@ p, li, a {
 } 
 
 .results-img {  
+    margin-top: 10px;
     margin-left: 40px;
-    height: 225px;
-    width: 225px;
+    height: 215px;
+    width: 215px;
     border-radius: 100%;
 }
 
