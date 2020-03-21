@@ -19,20 +19,13 @@ p, li, a {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
-    /* Found viewport height and viewport width source code on GeeksforGeeks
-    Source: https://www.geeksforgeeks.org/how-to-give-a-div-tag-100-height-of-the-browser-window-using-css/ */
     height: 100vh; 
     width: 100vw; 
 }
 
 
-/* TESTING */
 #dynamic-background-mega {
     background-color: lightblue;
-
-    /* Found viewport height and viewport width source code on GeeksforGeeks
-    Source: https://www.geeksforgeeks.org/how-to-give-a-div-tag-100-height-of-the-browser-window-using-css/ */
     height: 100vh; 
     width: 100vw; 
 }
@@ -121,9 +114,10 @@ p, li, a {
     text-align: center;
 }
 
-#city {
+.id {
     background-color: bisque;
     padding: 2%;
+    font-size: auto;
 }
 
 .weather-icon {
